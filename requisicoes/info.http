@@ -1,4 +1,4 @@
-@urlBase=http://localhost:3000
+@urlBase=http://localhost:4000
 
 ### Pegar todos os generos
 GET {{urlBase}}/info/generos

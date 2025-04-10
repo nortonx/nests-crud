@@ -4,7 +4,7 @@
 GET {{urlBase}}/filmes
 
 ### Pegar todos os filmes com parâmetro de query
-GET {{urlBase}}/filmes?ignorar=elenco,genero
+GET {{urlBase}}/filmes?ignorar=elenco,genero&nome=valor
 
 ### Ping
 GET {{urlBase}}/ping
@@ -50,7 +50,7 @@ Content-Type: application/json
 
 
 ### Editar um filme
-PATCH {{urlBase}}/filmes/FIL001
+PATCH {{urlBase}}/filmes/FIL000
 Content-Type: application/json
 
 {
