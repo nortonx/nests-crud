@@ -1,0 +1,57 @@
+@urlBase=http://localhost:4000
+
+### cadastro
+POST {{urlBase}}/cadastrar
+Content-Type: application/json
+
+{
+    "email":"ana3@mail.com",
+    "senha":"a"
+}
+
+### login 
+# @name postLogin
+POST {{urlBase}}/login
+Content-Type: application/json
+
+{
+    "email":"ana@mail.com",
+    "senha":"a"
+}
+
+###
+@token = {{postLogin.response.body.token}}
+
+###
+GET {{urlBase}}/info/atores
+Authorization: Bearer {{token}}
+
+
+###
+POST {{urlBase}}/filmes
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "titulo": "Novo filme",
+    "ano": 2020,
+    "genero": [
+        { "id": "GEN003", "nome": "Ação" }
+    ],
+    "diretor": {
+        "id": "DIR102",
+        "nome": "Novo diretor",
+        "nascimento": "1967-08-01",
+        "nacionalidade": "Brasileiro"
+    },
+    "elenco": [
+        {
+            "id": "ATR104",
+            "nome": "Novo ator",
+            "papel": "Protagonista",
+            "nascimento": "1976-06-27",
+            "nacionalidade": "Brasileiro"
+        }
+    ],
+    "sinopse":"Um novo filme muito legal"
+}
