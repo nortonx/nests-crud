@@ -9,15 +9,14 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [InfoModule, FilmesModule, ConfigModule.forRoot({ isGlobal: true }), AuthModule],
+  imports: [InfoModule, FilmesModule, ConfigModule.forRoot({isGlobal:true}), AuthModule],
   controllers: [AppController],
   providers: [AppService, BancoProvider],
 })
 export class AppModule {
-  // configure(consumer: MiddlewareConsumer) {
+  // configure(consumer: MiddlewareConsumer){
   //   consumer.apply(PrimeiroMiddleware).forRoutes({
-  //     path: '*',
-  //     method: RequestMethod.ALL,
-  //   });
+  //     path:"*", method:RequestMethod.POST
+  //   })
   // }
 }

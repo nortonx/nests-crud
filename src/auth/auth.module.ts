@@ -6,17 +6,16 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BancoProvider } from 'src/banco/banco.provider';
 
 @Module({
-  imports: [
+  imports:[
     JwtModule.registerAsync({
-      imports: [ConfigModule],
-      useFactory: async (config: ConfigService) => ({
-        secret: await config.get('JWT_SECRET'),
-        signOptions: { expiresIn: '1h' },
+      imports:[ConfigModule],
+      useFactory: async (config:ConfigService)=>({
+        secret:config.get("JWT_SECRET"),
+        signOptions: {expiresIn:"1h"}
       }),
-      inject: [ConfigService],
-    }),
+      inject:[ConfigService]
+    })
   ],
-
   controllers: [AuthController],
   providers: [AuthService, BancoProvider],
 })

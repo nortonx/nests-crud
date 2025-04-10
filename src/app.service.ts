@@ -6,7 +6,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getPing(): string {
-    return `pong`;
+  getPing(){
+    return "pong"
   }
 }
