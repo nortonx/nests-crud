@@ -5,7 +5,7 @@ POST {{urlBase}}/cadastrar
 Content-Type: application/json
 
 {
-    "email":"ana3@mail.com",
+    "email":"ana@mail.com",
     "senha":"a"
 }
 

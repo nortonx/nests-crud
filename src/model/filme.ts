@@ -8,4 +8,5 @@ export interface Filme {
   diretor: Diretor;
   elenco: Ator[];
   sinopse: string;
+  criadoPor?: string;
 }

@@ -6,9 +6,10 @@ import { BancoProvider } from './banco/banco.provider';
 import { FilmesModule } from './filmes/filmes.module';
 // import { PrimeiroMiddleware } from './middlewares/primeiro.middleware';
 import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [InfoModule, FilmesModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [InfoModule, FilmesModule, ConfigModule.forRoot({ isGlobal: true }), AuthModule],
   controllers: [AppController],
   providers: [AppService, BancoProvider],
 })

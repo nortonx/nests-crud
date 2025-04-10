@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Filme } from 'src/model';
+import { Usuario } from 'src/model';
 
 @Injectable()
 export class BancoProvider {
@@ -399,5 +400,11 @@ export class BancoProvider {
 
   get filmes() {
     return this._filmes;
+  }
+
+  private _usuarios: Usuario[] = [];
+
+  get usuarios() {
+    return this._usuarios;
   }
 }

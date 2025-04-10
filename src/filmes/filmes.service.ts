@@ -17,7 +17,7 @@ export class FilmesService {
     return copia;
   }
 
-  create(createFilmeDto: CreateFilmeDto) {
+  create(createFilmeDto: CreateFilmeDto, emailUsuario: string) {
     if (
       !(
         createFilmeDto.titulo &&
@@ -30,7 +30,11 @@ export class FilmesService {
     }
 
     const aleatorio = (Math.random() * 100) | 0;
-    const filme = { ...createFilmeDto, id: `FIL${aleatorio}` };
+    const filme = { 
+      ...createFilmeDto,
+      id: `FIL${aleatorio}`,
+      criadoPor: emailUsuario,
+    };
 
     this.banco.filmes.push(filme);
     return filme;
